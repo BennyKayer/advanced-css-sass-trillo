@@ -367,3 +367,67 @@
 
     }
 }
+
+//////////////////////////
+/// Reviews
+.review {
+    background-color: #fff;
+    box-shadow: var(--shadow-light);
+    padding: 3rem;
+    margin-bottom: 3.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+
+    &__text {
+        flex: 0 0 100%;
+        z-index: 10;
+        position: relative;
+    }
+
+    &__user {
+        display: flex;
+        width: 100%;
+        align-items: center;
+    }
+
+    &__photo {
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 50%;
+    }
+
+    &__user-box {
+        padding: 2rem;
+    }
+
+    &__user-name {
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    &__user-date {
+        font-size: 1rem;
+        color: var(--color-grey-dark-3);
+    }
+
+    &__rating {
+        margin-left: auto;
+        font-size: 2.2rem;
+        color: var(--color-primary);
+    }
+
+    // This is the styling for these quotes background image in reviews
+    &::before {
+        content: "\201C";
+        position: absolute;
+        top: -2rem;
+        left: 1rem;
+        line-height: 1;
+        font-size: 20rem;
+        font-family: sans-serif;
+        color: var(--color-grey-light-2);
+        z-index: 1;
+    }
+}
