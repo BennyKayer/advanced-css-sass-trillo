@@ -375,17 +375,23 @@
             width: 2rem;
             margin-right: .7rem;
 
+            // FEATURE QUERY:
+            // on older browser show black chevron icon
+            // on newer use masks to color the chevron
             // older browsers don't support mask
-            // background-image: url(../img/chevron-thin-right.svg);
-            // background-size: cover;
+            background-image: url(../img/chevron-thin-right.svg);
+            background-size: cover;
 
-            // masks - similar to clipping 
+            // MASKS - similar to clipping 
             // background "shows through svg"
-            background-color: var(--color-primary);
-            mask-image: url(../img/chevron-thin-right.svg);
-            mask-size: cover;
-            -webkit-mask-image: url(../img/chevron-thin-right.svg);
-            -webkit-mask-size: cover;
+            @supports (mask-image: url()) or (-webkit-mask-image: url()) {
+                background-color: var(--color-primary);
+                mask-image: url(../img/chevron-thin-right.svg);
+                mask-size: cover;
+                -webkit-mask-image: url(../img/chevron-thin-right.svg);
+                -webkit-mask-size: cover;
+                background-image: none;
+            }
         }
     }
 }
